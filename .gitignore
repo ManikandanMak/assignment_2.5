@@ -1,0 +1,34 @@
+1) Cluster :
+         A computer cluster consists of a set of loosely or tightly connected computers that work together so that, in many respects, they can be viewed as a single system.
+         Unlike grid computers, computer clusters have each node set to perform the same task, controlled and scheduled by software.
+                      
+Hadoop cluster :
+         Hadoop clusters are used to store large files.
+         Recently data storages has grown exponentially than past, but reeding speed has not increased radically.
+         Hadoop clusters are used to read the files of around 1TB in 2 minutes.
+         The Speed of the Hadoop clusters is 100 times to that of a single driver.
+         In 2010, the time taken for 1TB file was 3 Hours. But not time taken for 1TB is 2 Minutes 
+
+2) Components of Hadoop 1.x :
+                   > Name node
+                   > Secondary Name node
+                   > Data node
+                   > Job Tracker
+                   > Task Tracker
+Name Node          :
+                    Contains the HDFS tree and other metadata information about files and directories.
+                    Contains in-memory mapping of which blocks are store in which datanode.
+Secondary Namenode :
+                    Performs house-keeping activities for Namenode, like periodic merging of namespace and edits.
+                    It is not a backup of Namenode.
+Datanode           :
+                    Stores actual data of files in HDFS on its local disk.
+                    Sends signal to Namenode periodically to verify if it is active.
+                    It is the workhouse of the system.
+                    It also sends block reporting to the Namenode on cluster startup as well as periodically at every 10th heartbeat
+                    DataNode performs all the block operations, including periodic checksum. It receives instruction from the namenode of where to put the blocks and how to put the blocks.
+Job Tracker        :
+                    Controls overall execution of map reduce jobs.
+Task Trackers      :
+                    Runs individual map-reduce jobs on datanodes.
+                    Periodically communicates with the jobtracker to give updates and receive instructions.
